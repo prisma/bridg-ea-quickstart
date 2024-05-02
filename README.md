@@ -19,30 +19,32 @@ npm install
 ```shell
 npm run dev
 ```
-You should see an empty chat interface.
 
-Prisma Bridg works seamlessly with Prisma Accelerate and Prisma Pulse. Let's enable them.
+You should see an empty chat interface at `http://localhost:3000` 💬
 
-Navigate to your Prisma Data Platform account and create a new project. Let's call it, Prisma Bridg Chat.
-This will create a default environment for your project.
+## Getting setup on the Prisma Data Platform
+
+Prisma Bridg works seamlessly with [Prisma Accelerate](https://www.prisma.io/data-platform/accelerate) and [Prisma Pulse](https://www.prisma.io/data-platform/pulse). Let's enable them.
+
+Navigate to your Prisma Data Platform workspace and create a new project. Let's call it, **Prisma Bridg Chat**. This will create a default environment for your project.
 
 Next, we'll enable Accelerate and Pulse for this project.
 
-*If you need a database to complete this setup, you can use our [Railway DB template](https://railway.app/template/pulse-pg) to easily provision a Postgres database.
+>If you need a database to complete this setup, you can use our [Railway DB template](https://railway.app/template/pulse-pg) to easily provision a Postgres database.
 
 ### 5. Enable Accelerate
-- Provide your direct database connection and select a region to enable Accelerate. We'll skip static IP support for demo purposes.
-- Once enabled, you'll be able to Generate an API Key for Accelerate. You'll note the API Key was generated in the format of a connection string, use this as your DATABASE_URL in your .env file.
+- Provide your direct database connection string and select the region nearest your database to enable Accelerate. We'll skip static IP support for demo purposes.
+- Once enabled, you can generate your Accelerate API key. You'll note the API Key was generated in the format of a connection string, use this as your DATABASE_URL in your .env file.
 
 ```shell
 DATABASE_URL=""
 ```
 
-When replacing your DATABASE_URL with your new Accelerate connection string, be sure to add your direct database connection string to DIRECT_DATABASE_URL. This is used for migrations.
+When replacing your DATABASE_URL with your new Accelerate connection string, you can keep your direct database connection string as `DIRECT_DATABASE_URL` for migration support.
 
 ### 6. Enable Pulse
 - Navigate to the Pulse tab within your project's production environment (where we just enabled Accelerate)
-- Provide your direct database connection and select a region to enable Pulse. We'll use the automatic setup.
+- Provide your direct database connection string and select the region nearest your database to enable Pulse. We'll use the automatic setup.
 - Once enabled, you'll be able to Generate an API Key for Pulse. Add the generated API Key to your .env file
 
 ```shell
@@ -60,7 +62,7 @@ npx bridg-cli init
 
 This will do the following for you,
 1. Install remaining dependencies
-2. Generate the bridg-server.ts and bridg.ts files for you
+2. Generate the `bridg-server.ts` and `bridg.ts` files for you
 3. Deploy your managed Bridg endpoint
 
 You're all set 🚀  Let's see how we can use Prisma Bridg to power our chat application.
@@ -101,3 +103,6 @@ Replace the `<Button />` alert with the following code to send new messages.
 ```tsx
 <Button className="ml-2" onClick={() => bridg.message.create({ data: { body: newMessage } })}>Send</Button>
 ```
+
+# Feedback
+Let us know if you have any thoughts, questions, or feedback in this form!
