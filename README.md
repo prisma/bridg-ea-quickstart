@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-You should see an empty chat interface at `http://localhost:3000` 💬
+You should see an empty chat interface at `http://localhost:3000` 
 
 ## Getting setup on the Prisma Data Platform
 
@@ -103,6 +103,28 @@ Replace the `<Button />` alert with the following code to send new messages.
 ```tsx
 <Button className="ml-2" onClick={() => bridg.message.create({ data: { body: newMessage } })}>Send</Button>
 ```
+
+If you try to send a message now you'll get the following error message.
+> Unauthorized Bridg query on model: message
+
+This is becuase we have not yet refined our Bridg rules. Navigate to the `prisma/bridg.ts` file and modify the following code.
+
+```ts
+message: {
+  find: (uid) => true, // udpate this to true, so that we can fetch messages
+  update: (uid, data) => false,
+  create: (uid, data) => true, // udpate this to true, so that we can create new messages
+  delete: (uid) => false,
+},
+```
+
+Deploy your latest Bridg rules by running the following command.
+
+```shell
+  npx bridg-cli deploy
+```
+
+If you create a new message now you should see it appear in the chat interface 💬
 
 # Feedback
 Let us know if you have any thoughts, questions, or feedback in this form!
