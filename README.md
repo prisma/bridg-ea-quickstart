@@ -1,12 +1,12 @@
 # Prisma Bridg EA Quickstart
 A quick-start template using Prisma Bridg.
 
-This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [`prisma init`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [`prisma init`](https://www.prisma.io/docs/orm/reference/prisma-cli-reference#init)
 
 ## Setup
 ### 1. Clone repo
 ```shell
-git clone 
+git clone git@github.com:prisma/bridg-ea-quickstart.git
 cd bridg-ea-quickstart
 ```
 
