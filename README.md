@@ -42,7 +42,14 @@ DATABASE_URL=""
 
 When replacing your DATABASE_URL with your new Accelerate connection string, you can keep your direct database connection string as `DIRECT_DATABASE_URL` for migration support.
 
-### 6. Enable Pulse
+### 6. Migrate Database
+- Requires `DIRECT_DATABASE_URL` to be set in your .env file
+
+```shell
+npx prisma db push
+```
+
+### 7. Enable Pulse
 - Navigate to the Pulse tab within your project's production environment (where we just enabled Accelerate)
 - Provide your direct database connection string and select the region nearest your database to enable Pulse. We'll use the automatic setup.
 - Once enabled, you'll be able to Generate an API Key for Pulse. Add the generated API Key to your .env file
@@ -53,7 +60,7 @@ PULSE_API_KEY=""
 
 Great! You've now enabled Prisma Accelerate and Prisma Pulse for your project. Let's add Prisma Bridg to our application
 
-### 7. Add Prisma Bridg
+### 8. Add Prisma Bridg
 From within your project directory, run the following command to add Prisma Bridg to your project.
 
 ```shell
