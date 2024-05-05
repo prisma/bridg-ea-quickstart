@@ -134,4 +134,4 @@ Deploy your latest Bridg rules by running the following command.
 If you create a new message now you should see it appear in the chat interface 💬
 
 # Feedback
-Let us know if you have any thoughts, questions, or feedback in this form!
+Let us know if you have any thoughts, questions, or feedback via Discord!
